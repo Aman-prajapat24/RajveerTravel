@@ -7,23 +7,15 @@ body {
 :root {
     --primary-color: #8b2626;
     --secondary-color: #feb000;
+    --primary-shadow: rgba(139, 38, 38, 0.4);
+    --secondary-shadow: rgba(254, 176, 0, 0.4);
+    --white-color: #fff;
+    --black-color: #000;
+
 }
 
-/* Hide effect for top header */
-.top-header.hide {
-    max-height: 0;
-    padding: 0;
-    opacity: 0;
-    border: 0;
-}
 
-.main-header.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
+/* //////  Header section start ////// */
 
 /* Top Header */
 .top-header {
@@ -45,6 +37,13 @@ body {
 .top-header .contact-info i {
     margin-right: 5px;
     color: var(--primary-color);
+}
+
+.top-header.hide {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    border: 0;
 }
 
 /* Social Icons */
@@ -87,9 +86,15 @@ body {
     }
 }
 
+/* Hide social icons on mobile 425px and below */
+@media (max-width: 425px) {
+    .top-header .social-icons {
+        display: none;
+    }
+}
 
 
-/* //////  Header section start ////// */
+
 .main-header {
     background-color: #8b2626;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -99,8 +104,12 @@ body {
     z-index: 1000;
 }
 
-.main-header.hide {
-    transform: translateY(-100%);
+.main-header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 /* Logo */
@@ -269,7 +278,8 @@ body {
 /* //////  Header section end ////// */
 
 
-/* Swiper Slider */
+/* ====== Banner Slider section start ======  */
+
 .swiper {
     width: 100%;
     height: 500px;
@@ -280,6 +290,8 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+/* ====== Banner Slider section end ======  */
 
 /* ====== About section start ====== */
 
@@ -490,9 +502,10 @@ body {
 
 /* ====== Jaipur Tour Packages section start ====== */
 
-.jaipur_tour{
+.jaipur_tour {
     padding-top: 50px;
 }
+
 .jaipur_tour h1 {
     color: var(--primary-color);
     margin-bottom: 50px;
@@ -581,8 +594,15 @@ body {
 .tour-card {
     flex: 1;
 }
+
 .jaipur_tour .col-md-4 {
-    margin-bottom: 50px; /* mobile & desktop dono me equal gap */
+    margin-bottom: 50px;
+}
+
+@media (max-width: 425px) {
+    .jaipur_tour h1 {
+        font-size: 2rem;
+    }
 }
 
 
@@ -685,8 +705,8 @@ body {
         padding: 30px 15px;
     }
 
-    .india-rides-section h2 {
-        font-size: 22px;
+    .india-rides-section h1 {
+        font-size: 2rem;
     }
 }
 
@@ -718,10 +738,12 @@ body {
 }
 
 .car-section .cars-grid {
- display: grid;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    column-gap: 25px;  /* cards ke bich ka horizontal space */
-    row-gap: 40px;     /* rows ke bich ka vertical space */
+    column-gap: 25px;
+    /* cards ke bich ka horizontal space */
+    row-gap: 40px;
+    /* rows ke bich ka vertical space */
     margin-top: 30px;
 }
 
@@ -875,7 +897,7 @@ body {
 
 @media (max-width: 480px) {
     .car-section .header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .car-section .header p {
@@ -885,7 +907,8 @@ body {
     .car-section .car-image {
         height: 140px;
     }
-     .car-section .cars-grid {
+
+    .car-section .cars-grid {
         column-gap: 20px;
         row-gap: 30px;
     }
@@ -1066,8 +1089,8 @@ body {
 }
 
 @media (max-width: 425px) {
-    .testimonial-slider h2 {
-        font-size: 20px;
+    .testimonial-slider h1 {
+        font-size: 2rem;
     }
 
     .testimonial-slider .client-name {
@@ -1091,6 +1114,104 @@ body {
         font-size: 22px;
     }
 }
+
+@media (max-width: 375px) {
+    .testimonial-slider h1 {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .testimonial-slider .client-name {
+        font-size: 14px;
+    }
+
+    .testimonial-slider .client-role {
+        font-size: 11px;
+    }
+
+    .testimonial-slider .testimonial-text {
+        font-size: 12px;
+        padding: 0 10px;
+        margin-bottom: 12px;
+    }
+
+    .testimonial-slider .profile-icon {
+        width: 45px;
+        height: 45px;
+        border-width: 2px;
+    }
+
+    .testimonial-slider .profile-icon i {
+        font-size: 18px;
+    }
+
+    .testimonial-slider .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px 10px 10px;
+    }
+
+    .testimonial-slider .rating-box {
+        font-size: 11px;
+        padding: 4px 12px;
+        border-radius: 0 12px 0 0;
+        margin-bottom: 4px;
+    }
+
+    .testimonial-slider .quote-icon {
+        font-size: 18px;
+        padding: 0;
+    }
+
+    .testimonial-slider .testimonial-card {
+        height: auto;
+    }
+}
+
+@media (max-width: 320px) {
+    .testimonial-slider h1 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-slider .client-name {
+        font-size: 13px;
+    }
+
+    .testimonial-slider .client-role {
+        font-size: 10px;
+    }
+
+    .testimonial-slider .testimonial-text {
+        font-size: 11px;
+        padding: 0 8px;
+        margin-bottom: 10px;
+    }
+
+    .testimonial-slider .profile-icon {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+    }
+
+    .testimonial-slider .profile-icon i {
+        font-size: 16px;
+    }
+
+    .testimonial-slider .card-footer {
+        padding: 0 8px 8px 8px;
+    }
+
+    .testimonial-slider .rating-box {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+
+    .testimonial-slider .quote-icon {
+        font-size: 16px;
+    }
+}
+
 
 /* ====== testimonial section end ====== */
 
@@ -1165,6 +1286,13 @@ body {
     padding-left: 5px;
 }
 
+.menu_links {
+    margin-left: 80px;
+}
+.links {
+    margin-left: 40px;
+}
+
 .footer .copyright {
     text-align: center;
     border-top: 1px solid var(--secondary-color);
@@ -1218,6 +1346,14 @@ body {
     }
 }
 
+@media (max-width: 425px) {
+    .menu_links {
+        margin-left: 0;
+    }
+    .links {
+    margin-left: 0;
+}
+}
 
 /* ====== Footer section end ====== */
 
@@ -1899,7 +2035,7 @@ body {
 }
 
 .modal-header {
-    background: linear-gradient(45deg, #007bff, #0056b3);
+    background: var(--primary-color);
     color: white;
     border-bottom: none;
 }
@@ -1911,13 +2047,13 @@ body {
 /* Custom Input */
 .custom-input {
     border-radius: 8px;
-    border: 1px solid #ced4da;
+    border: 1px solid var(--black-color);
     transition: all 0.3s ease;
 }
 
 .custom-input:focus {
-    border-color: #007bff;
-    box-shadow: 0px 0px 6px rgba(0, 123, 255, 0.4);
+    border-color: var(--secondary-color);
+    box-shadow: 0px 0px 6px rgba(139, 38, 38, 0.4);
 }
 
 /* Button Styling */
@@ -1925,13 +2061,14 @@ body {
     border-radius: 8px;
     font-weight: 500;
     padding: 10px;
-    background: linear-gradient(45deg, #007bff, #0056b3);
+    background: var(--primary-color);
     border: none;
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, #0056b3, #00408a);
+    background: var(--secondary-color);
+    color: #000;
 }
 
 /* Animation */
