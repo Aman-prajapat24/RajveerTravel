@@ -1,3 +1,54 @@
+///// Header section start /////
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggler = document.querySelector(".navbar-toggler");
+  const menu = document.querySelector("#navbarNav");
+  const overlay = document.querySelector(".menu-overlay");
+  const closeBtn = document.querySelector(".menu-close");
+  const topHeader = document.getElementById("topHeader");
+  const mainHeader = document.getElementById("mainHeader");
+
+  // ✅ Open menu
+  toggler.addEventListener("click", () => {
+    menu.classList.add("show");
+    overlay.classList.add("show");
+  });
+
+  // ✅ Close menu function
+  function closeMenu() {
+    menu.classList.remove("show");
+    overlay.classList.remove("show");
+  }
+
+  overlay.addEventListener("click", closeMenu);
+  closeBtn.addEventListener("click", closeMenu);
+
+  // Optional: close on ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // ✅ Scroll Behavior for Top + Main Header
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 100) {
+      // Top header smoothly slide up
+      topHeader.classList.add("hide");
+      mainHeader.classList.add("fixed");
+    } else {
+      // Top header slide down
+      topHeader.classList.remove("hide");
+      mainHeader.classList.remove("fixed");
+    }
+
+    lastScroll = currentScroll;
+  });
+});
+
+///// Header section end /////
+
 
     // Swiper Initialization
     var swiper = new Swiper(".mySwiper", {
@@ -10,25 +61,7 @@
         navigation: false, // No next/prev
     });
 
-    // Scroll Behavior for Headers
-    let lastScroll = 0;
-    let topHidden = false;
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.pageYOffset;
-        if (currentScroll > lastScroll) {
-            // Scroll down
-            if (currentScroll > 200) {
-                document.getElementById("mainHeader").classList.add("hide");
-            }
-        } else {
-            // Scroll up
-            if (currentScroll < 200) {
-                document.getElementById("mainHeader").classList.remove("hide");
-            }
-        }
-        lastScroll = currentScroll;
-    });
-
+  
 
 //  ====== testimonial section start ======
 

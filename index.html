@@ -23,22 +23,25 @@
     <!-- Top Header -->
     <div class="top-header" id="topHeader">
         <div class="container">
-            <div class="row align-items-center">
-                <!-- Email & Phone -->
-                <div class="col contact-info">
+            <div class="row align-items-center justify-content-between">
+
+                <!-- Left: Email & Phone -->
+                <div class="col-auto contact-info">
                     <div class="email"><i class="fas fa-envelope"></i> info@indiarides.com</div>
                     <div class="phone"><i class="fas fa-phone"></i> +91-1234567890</div>
                 </div>
 
-                <!-- Social Icons (only desktop) -->
-                <div class="col-auto d-none d-md-block social-icons">
+                <!-- Right: Social Icons -->
+                <div class="col-auto social-icons">
                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="instagram"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <!-- Main Header -->
@@ -47,25 +50,24 @@
             <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand" href="#">
-                    <img src="Assets/Travel Logo 1.png" alt="Logo" class="logo">
+                    <img src="Assets/Travel Logo.png" alt="Logo" class="logo" />
                 </a>
 
                 <!-- Toggle button for mobile -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <!-- Nav links -->
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse slide-menu" id="navbarNav">
+                    <!-- ❌ Close Button -->
+                    <button class="menu-close">&times;</button>
+
                     <ul class="navbar-nav ms-auto text-center">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-
-                        <!-- Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
                                 One Day Tours
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -74,7 +76,6 @@
                                 <li><a class="dropdown-item" href="#">Same Day Agra</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item"><a class="nav-link" href="taxi_service.html">Taxi Service</a></li>
                         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -83,6 +84,9 @@
             </div>
         </nav>
     </header>
+
+    <!-- ✅ Overlay -->
+    <div class="menu-overlay"></div>
 
     <!-- Banner Slider -->
     <div class="swiper mySwiper">
@@ -95,7 +99,7 @@
 
     <!-- ====== About section start ======  -->
 
-    <section class="about_section py-5">
+    <section class="about_section">
         <div class="container">
             <div class="row align-items-start">
                 <!-- Left Side: Single Image + Text -->
@@ -145,10 +149,10 @@
 
     <!-- ====== Jaipur Tour Packages section start ====== -->
 
-    <section class="jaipur_tour py-5 bg-light">
+    <section class="jaipur_tour bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Jaipur Tour Packages</h2>
-            <div class="row mb-5">
+            <h1 class="text-center">Jaipur Tour Packages</h1>
+            <div class="row">
 
                 <!-- Card 1 -->
                 <div class="col-md-4 d-flex">
@@ -287,7 +291,7 @@
     <!-- ====== The India Rides Section start ====== -->
 
     <section class="india-rides-section">
-        <h2>The India Rides</h2>
+        <h1>The India Rides</h1>
         <p>
             Experience the best of Jaipur with our Sightseeing and Day Tours. From exploring historical landmarks to
             indulging in local culture,
@@ -557,8 +561,8 @@
 
     <!-- ====== testimonial section start ====== -->
 
-    <section class="testimonial-slider mt-5">
-        <h2>What Our Clients Say</h2>
+    <section class="testimonial-slider">
+        <h1>What Our Clients Say</h1>
         <div class="swiper myTestimonialSwiper">
             <div class="swiper-wrapper">
 
@@ -594,7 +598,8 @@
                             <div class="profile-icon"><i class="fas fa-user"></i></div>
                         </div>
                         <div class="testimonial-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.sit amet, consectetur adipiscing elit. Donec nec vestibulum eros, eu
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.sit amet, consectetur adipiscing
+                            elit. Donec nec vestibulum eros, eu
                             tincidunt lorem.
                         </div>
                         <div class="card-footer">
@@ -654,12 +659,12 @@
 
     <!-- ====== Footer section start ======  -->
 
-    <footer class="footer mt-5">
+    <footer class="footer">
         <div class="footer-container">
 
             <!-- About -->
             <div class="footer-about">
-                <img src="Assets/Travel Logo 1.png" alt="India Rides Logo" class="footer-logo">
+                <img src="Assets/Travel Logo.png" alt="India Rides Logo" class="footer-logo">
                 <p><b>TheIndiaRides</b> Is A Dedicated And Friendly Tour Operator Based In Jaipur,
                     Specializes In Jaipur Sightseeing, Day Trips, Car Rental Service And Travel
                     Services Across Rajasthan.</p>
@@ -702,7 +707,9 @@
 
         <!-- Copyright -->
         <div class="copyright">
-            © Copyright codebyrohit
+            © Copyright <span>Codebyrohit</span>
+            <a href="">Terms & Condition
+                Privacy Policy</a>
         </div>
     </footer>
 

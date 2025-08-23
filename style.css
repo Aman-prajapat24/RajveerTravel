@@ -9,74 +9,87 @@ body {
     --secondary-color: #feb000;
 }
 
-/* Top Header */
-.top-header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 0;
-    transition: transform 0.3s ease;
-    font-size: 14px;
+/* Hide effect for top header */
+.top-header.hide {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    border: 0;
 }
 
-.top-header.hide {
-    transform: translateY(-100%);
+.main-header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Top Header */
+.top-header {
+    background-color: #fff;
+    color: #333;
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
 }
 
 .top-header .contact-info {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .top-header .contact-info i {
     margin-right: 5px;
+    color: var(--primary-color);
 }
 
 /* Social Icons */
 .social-icons a {
-    font-size: 14px;
-    margin-left: 10px;
+    font-size: 16px;
+    margin-left: 20px;
+    color: #000;
     transition: color 0.3s ease;
 }
 
-.social-icons a.facebook {
-    color: black;
+.social-icons a.facebook:hover {
+    color: var(--primary-color);
+    /* Facebook blue */
 }
 
-/* Facebook Blue */
-.social-icons a.twitter {
-    color: black;
+.social-icons a.twitter:hover {
+    color: var(--primary-color);
+    /* Twitter blue */
 }
 
-/* Twitter Blue */
-.social-icons a.instagram {
-    color: black;
+.social-icons a.instagram:hover {
+    color: var(--primary-color);
+    /* Instagram pink */
 }
 
-/* Instagram Pink */
-
-/* Hover effect */
-.social-icons a:hover {
-    opacity: 0.7;
-}
-
-/* Mobile Styles */
+/* Responsive */
 @media (max-width: 767px) {
-    .top-header .contact-info {
+    .top-header .row {
         flex-direction: column;
-        align-items: flex-start;
+        text-align: center;
     }
 
-    /* Hide social icons on mobile */
+    .top-header .contact-info {
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
     .top-header .social-icons {
-        display: none !important;
+        margin-top: 5px;
     }
 }
 
 
 
 /* //////  Header section start ////// */
-
 .main-header {
     background-color: #8b2626;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -86,12 +99,11 @@ body {
     z-index: 1000;
 }
 
-/* Hide header when scrolling */
 .main-header.hide {
     transform: translateY(-100%);
 }
 
-/* Logo Styling */
+/* Logo */
 .logo {
     max-height: 45px;
     width: auto;
@@ -108,7 +120,6 @@ body {
 
 .navbar-nav .nav-item {
     margin: 0 12px;
-    /* nav links के बीच gap */
 }
 
 .navbar-nav .nav-link:hover {
@@ -117,14 +128,13 @@ body {
 
 /* Dropdown Menu */
 .dropdown-menu {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color, #8b2626);
     border-radius: 8px;
     border: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 10px 0;
     display: none;
     text-align: center;
-    /* 👈 dropdown content center */
 }
 
 .dropdown-menu .dropdown-item {
@@ -135,33 +145,114 @@ body {
 }
 
 .dropdown-menu .dropdown-item:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color, #feb000);
 }
 
-/* Hover open - all devices */
 .navbar .dropdown:hover>.dropdown-menu {
     display: block;
 }
 
-/* Responsive Design */
+/* ✅ Custom Toggle Button */
+.navbar-toggler {
+    display: none;
+    /* default hidden (desktop) */
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ✅ Slide Menu (Mobile/Tablet) */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    background-color: #8b2626;
+    padding-top: 80px;
+    transition: right 0.4s ease-in-out;
+    z-index: 999;
+}
+
+.slide-menu.show {
+    right: 0;
+}
+
+/* Close Button inside Slide Menu */
+.menu-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+    /* default hidden */
+}
+
+.menu-close:hover {
+    color: #feb000;
+}
+
+
+/* ✅ Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+}
+
+.menu-overlay.show {
+    display: block;
+}
+
+/* =============== Responsive =============== */
 @media (max-width: 1024px) {
-    .navbar-nav .nav-link {
-        font-size: 1rem;
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
     }
 
     .navbar-nav .nav-item {
-        margin: 0 8px;
+        margin: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .menu-close {
+            display: block;
+        }
     }
 }
 
-@media (max-width: 768px) {
-    .navbar-nav {
-        text-align: center;
-        width: 100%;
+@media (min-width: 1025px) {
+    .slide-menu {
+        position: static;
+        height: auto;
+        width: auto;
+        background: transparent;
+        padding-top: 0;
+        transition: none;
     }
 
-    .navbar-nav .nav-item {
-        margin: 5px 0;
+    .navbar-nav {
+        flex-direction: row;
     }
 }
 
@@ -195,6 +286,7 @@ body {
 .about_section {
     font-family: Arial, sans-serif;
     position: relative;
+    margin-top: 50px;
 }
 
 /* Dashed line between left & right */
@@ -233,6 +325,12 @@ body {
     color: #000;
 }
 
+.about_section .card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+}
+
 /* Contact form card */
 .about_section .card {
     background: var(--primary-color);
@@ -245,7 +343,7 @@ body {
     font-size: 20px;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #fff;
     color: #fff;
 }
 
@@ -293,8 +391,8 @@ body {
     font-size: 14px;
     font-weight: bold;
     border: none;
-    background: #000;
-    color: #fff;
+    background: #fff;
+    color: var(--primary-color);
     cursor: pointer;
     height: 42px;
     /* ✅ equal height */
@@ -302,7 +400,9 @@ body {
 }
 
 .about_section .card button:hover {
-    background: #222;
+    background: var(--secondary-color);
+    color: #000;
+
 }
 
 /* ===============================
@@ -389,8 +489,14 @@ body {
 /* ====== About section end ====== */
 
 /* ====== Jaipur Tour Packages section start ====== */
-.jaipur_tour h2 {
+
+.jaipur_tour{
+    padding-top: 50px;
+}
+.jaipur_tour h1 {
     color: var(--primary-color);
+    margin-bottom: 50px;
+    font-size: 2.5rem;
 }
 
 .tour-card {
@@ -475,6 +581,10 @@ body {
 .tour-card {
     flex: 1;
 }
+.jaipur_tour .col-md-4 {
+    margin-bottom: 50px; /* mobile & desktop dono me equal gap */
+}
+
 
 /* ====== Jaipur Tour Packages section end ====== */
 
@@ -489,11 +599,10 @@ body {
     color: #000;
 }
 
-.india-rides-section h2 {
+.india-rides-section h1 {
     text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
     color: var(--primary-color);
 }
 
@@ -514,7 +623,7 @@ body {
 
 .india-rides-section .card {
     background: #fff;
-    
+
     padding: 20px;
 }
 
@@ -593,11 +702,11 @@ body {
 
 .car-section .header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .car-section .header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
@@ -609,9 +718,10 @@ body {
 }
 
 .car-section .cars-grid {
-    display: grid;
+ display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
+    column-gap: 25px;  /* cards ke bich ka horizontal space */
+    row-gap: 40px;     /* rows ke bich ka vertical space */
     margin-top: 30px;
 }
 
@@ -726,7 +836,8 @@ body {
 }
 
 .car-section .book-btn:hover {
-    background: #f7fafc;
+    background: var(--secondary-color);
+    color: #000;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -774,6 +885,10 @@ body {
     .car-section .car-image {
         height: 140px;
     }
+     .car-section .cars-grid {
+        column-gap: 20px;
+        row-gap: 30px;
+    }
 }
 
 /* ====== Car rental section end ====== */
@@ -787,20 +902,20 @@ body {
     margin: auto;
     text-align: center;
     padding: 0 20px;
+    margin-top: 50px;
 }
 
 /* Section Heading */
-.testimonial-slider h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 30px;
+.testimonial-slider h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
     color: var(--primary-color);
 }
 
 .testimonial-slider .swiper {
     width: 100%;
     height: auto;
-    padding: 10px 10px 40px;
+    padding: 10px 10px;
 }
 
 .testimonial-slider .swiper-wrapper {
@@ -986,6 +1101,7 @@ body {
     background: var(--primary-color);
     color: #fff;
     padding: 40px 20px 20px;
+    margin-top: 50px;
 }
 
 .footer-container {
@@ -1056,20 +1172,49 @@ body {
     padding-top: 15px;
     font-size: 13px;
     color: #fff;
+    letter-spacing: 1px;
+}
+
+.footer .copyright span {
+    font-weight: 600;
+}
+
+.footer .copyright a {
+    text-decoration: none;
+    color: #fff;
+    padding-left: 15px;
 }
 
 @media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+        justify-items: center;
+        /* grid items ko center karega */
+    }
+
     .footer-logo {
         width: 130px;
+        margin: 0 auto 15px;
+        /* logo ko center */
+        display: block;
     }
 
     .footer h3 {
         font-size: 16px;
     }
 
+    .footer h3::after {
+        margin: 5px auto 0;
+        /* underline ko center karega */
+    }
+
     .footer p,
     .footer ul li a {
         font-size: 13px;
+    }
+
+    .footer ul {
+        padding: 0;
     }
 }
 
@@ -1159,12 +1304,12 @@ body {
 }
 
 
-.about_section {
+.about_section2 {
     padding: 0px 20px;
     margin-top: 50px;
 }
 
-.about_section .container {
+.about_section2 .container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -1175,41 +1320,41 @@ body {
     /* responsive ke liye */
 }
 
-.about_section .container .left,
-.about_section .container .right {
+.about_section2 .container .left,
+.about_section2 .container .right {
     flex: 1;
     min-width: 300px;
 }
 
-.about_section .container .left img {
+.about_section2 .container .left img {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.about_section .container .right h2 {
+.about_section2 .container .right h2 {
     font-size: 28px;
     margin-bottom: 15px;
     color: #e63946;
 }
 
-.about_section .container .right p {
+.about_section2 .container .right p {
     font-size: 16px;
     color: #555;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .about_section .container {
+    .about_section2 .container {
         flex-direction: column;
         text-align: center;
     }
 
-    .about_section .container .right h2 {
+    .about_section2 .container .right h2 {
         font-size: 24px;
     }
 
-    .about_section .container .right p {
+    .about_section2 .container .right p {
         font-size: 15px;
     }
 }
@@ -1711,7 +1856,7 @@ body {
     right: 0;
     transform: translateY(-50%);
     z-index: 1000;
-    background-color: #e91e63;
+    background-color: var(--primary-color);
     color: #fff;
     padding: 12px 8px;
     font-size: 16px;
@@ -1727,7 +1872,8 @@ body {
 }
 
 .enquiry-btn:hover {
-    background-color: #d81b60;
+    background-color: var(--secondary-color);
+    color: #000;
     transform: translateY(-50%) translateX(-2px);
 }
 
