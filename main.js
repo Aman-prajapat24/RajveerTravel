@@ -29,23 +29,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // ✅ Scroll Behavior for Top + Main Header
-    let lastScroll = 0;
     window.addEventListener("scroll", () => {
         const currentScroll = window.pageYOffset;
 
         if (currentScroll > 100) {
-            // Top header smoothly slide up
             topHeader.classList.add("hide");
             mainHeader.classList.add("fixed");
         } else {
-            // Top header slide down
             topHeader.classList.remove("hide");
             mainHeader.classList.remove("fixed");
         }
-
-        lastScroll = currentScroll;
     });
 });
+
 
 ///// ====== Header section end ====== /////
 

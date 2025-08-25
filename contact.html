@@ -20,52 +20,54 @@
 <body>
 
 
+ <!-- ====== Header section start ====== -->
+
     <!-- Top Header -->
     <div class="top-header" id="topHeader">
         <div class="container">
-            <div class="row align-items-center">
-                <!-- Email & Phone -->
-                <div class="col contact-info">
+            <div class="row align-items-center justify-content-between">
+
+                <!-- Left: Email & Phone -->
+                <div class="col-auto contact-info">
                     <div class="email"><i class="fas fa-envelope"></i> info@indiarides.com</div>
                     <div class="phone"><i class="fas fa-phone"></i> +91-1234567890</div>
                 </div>
 
-                <!-- Social Icons (only desktop) -->
-                <div class="col-auto d-none d-md-block social-icons">
+                <!-- Right: Social Icons -->
+                <div class="col-auto social-icons">
                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="instagram"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
-
     <!-- Main Header -->
-    <header>
+     <header>
         <nav class="navbar navbar-expand-lg main-header" id="mainHeader">
             <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand" href="#">
-                    <img src="Assets/logo.png" alt="Logo" class="logo">
+                    <img src="Assets/Travel Logo.png" alt="Logo" class="logo" />
                 </a>
 
                 <!-- Toggle button for mobile -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <!-- Nav links -->
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse slide-menu" id="navbarNav">
+                    <!-- ❌ Close Button -->
+                    <button class="menu-close">&times;</button>
+
                     <ul class="navbar-nav ms-auto text-center">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-
-                        <!-- Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
                                 One Day Tours
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -74,7 +76,6 @@
                                 <li><a class="dropdown-item" href="#">Same Day Agra</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-item"><a class="nav-link" href="taxi_service.html">Taxi Service</a></li>
                         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -84,13 +85,18 @@
         </nav>
     </header>
 
+    <!-- ✅ Overlay -->
+    <div class="menu-overlay"></div>   
+
+    <!-- ====== Header section end ====== -->
+
 
     <!-- Hero Section -->
     <section class="hero-section" style="background: url('./Assets/tour_img2.jpg') center/cover no-repeat;">
         <div class="hero-content">
-            <h1>Contact Us</h1>
+            <h1>The India Rides Tour Cabs</h1>
             <div class="breadcrumb">
-                <a href="#">HOME</a> / <a href="#">Contact</a>
+                <a href="#">HOME</a> / <a href="#" style="color: #000;">Contact</a>
             </div>
         </div>
     </section>
@@ -100,7 +106,7 @@
 
 <section class="contact_section">
     <div class="contact-header">
-      <h2>Get In Touch With Us</h2>
+      <h1>Get In Touch With Us</h1>
     </div>
 
     <div class="contact-container">
@@ -142,8 +148,7 @@
 
       <!-- Map -->
       <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9073181166273!2d-73.98715538509489!3d40.75889597932611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855d4a3c4c7%3A0x8696510c048eec2b!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1635244289894!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.536973309373!2d75.8075570742202!3d26.88644836122097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db712352ea451%3A0x83bdfbedef17a055!2sCLOUD%20ZILLA!5e0!3m2!1sen!2sin!4v1756105342192!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div>
     </div>
 
     <!-- Contact Form -->
@@ -186,21 +191,21 @@
 
 
 
-    <!-- ====== Footer section start ======  -->
+       <!-- ====== Footer section start ======  -->
 
-    <footer class="footer mt-5">
+    <footer class="footer">
         <div class="footer-container">
 
             <!-- About -->
-            <div>
-                <h2>India Rides</h2>
+            <div class="footer-about">
+                <img src="Assets/Travel Logo.png" alt="India Rides Logo" class="footer-logo">
                 <p><b>TheIndiaRides</b> Is A Dedicated And Friendly Tour Operator Based In Jaipur,
                     Specializes In Jaipur Sightseeing, Day Trips, Car Rental Service And Travel
                     Services Across Rajasthan.</p>
             </div>
 
             <!-- One Day Tours -->
-            <div>
+            <div class="links">
                 <h3>One Day Tours From Jaipur</h3>
                 <ul>
                     <li><a href="#">One Day Jaipur Sightseeing Tour</a></li>
@@ -213,7 +218,7 @@
             </div>
 
             <!-- Useful Links -->
-            <div>
+            <div class="menu_links">
                 <h3>Useful Links</h3>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -236,10 +241,11 @@
 
         <!-- Copyright -->
         <div class="copyright">
-            © Copyright codebyrohit
+            © Copyright <span>Codebyrohit</span>
+            <a href="">Terms & Condition
+                Privacy Policy</a>
         </div>
     </footer>
-
 
     <!-- ====== Footer section end ======  -->
 
