@@ -1154,7 +1154,7 @@ a:hover {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 10px 10px 10px;
+        padding-right: 20px;
     }
 
     .testimonial-slider .rating-box {
@@ -1209,7 +1209,7 @@ a:hover {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 10px 10px 10px;
+        padding-right: 20px;
     }
 
     .testimonial-slider .rating-box {
