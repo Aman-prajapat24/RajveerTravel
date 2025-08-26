@@ -923,7 +923,6 @@ a:hover {
 
 
 /* ====== testimonial section start ====== */
-
 .testimonial-slider {
     width: 100%;
     max-width: 1300px;
@@ -943,7 +942,7 @@ a:hover {
 .testimonial-slider .swiper {
     width: 100%;
     height: auto;
-    padding: 0; /* ✅ पहले 10px था */
+    padding: 0;
 }
 
 .testimonial-slider .swiper-wrapper {
@@ -1024,7 +1023,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
-    padding-right: 20px;
+    padding: 0; /* ✅ Fix: border से flush */
 }
 
 .testimonial-slider .rating-box {
@@ -1033,11 +1032,13 @@ a:hover {
     padding: 8px 20px;
     border-radius: 0 20px 0 0;
     font-size: 14px;
+    margin: 0; /* ✅ Fix: gap हटाया */
 }
 
 .testimonial-slider .quote-icon {
     font-size: 24px;
     color: var(--primary-color);
+    padding-right: 20px; /* ✅ सिर्फ quote को space दिया */
 }
 
 /* ---- Theme Pink ---- */
@@ -1150,24 +1151,13 @@ a:hover {
         font-size: 18px;
     }
 
-    /* ✅ Fix: keep footer row (rating left, quote right) */
-    .testimonial-slider .card-footer {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 20px;
-    }
-
     .testimonial-slider .rating-box {
         font-size: 11px;
         padding: 4px 12px;
-        border-radius: 0 12px 0 0;
-        margin-bottom: 0;
     }
 
     .testimonial-slider .quote-icon {
         font-size: 18px;
-        padding: 0;
     }
 
     .testimonial-slider .testimonial-card {
@@ -1205,25 +1195,16 @@ a:hover {
         font-size: 16px;
     }
 
-    /* ✅ Fix: footer row maintained */
-    .testimonial-slider .card-footer {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 20px;
-    }
-
     .testimonial-slider .rating-box {
         font-size: 10px;
         padding: 4px 12px;
-        border-radius: 0 12px 0 0;
     }
 
     .testimonial-slider .quote-icon {
         font-size: 16px;
-        padding: 0;
     }
 }
+
 
 
 /* ====== testimonial section end ====== */
