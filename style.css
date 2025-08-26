@@ -13,6 +13,7 @@ body {
     --black-color: #000;
 
 }
+
 a:hover {
     text-decoration: none !important;
 }
@@ -137,7 +138,7 @@ a:hover {
 
 /* Dropdown Menu */
 .dropdown-menu {
-    background-color: var(--primary-color, #8b2626);
+    background-color: var(--primary-color);
     border-radius: 8px;
     border: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -147,7 +148,7 @@ a:hover {
 }
 
 .dropdown-menu .dropdown-item {
-    color: #fff;
+    color: var(--white-color);
     font-size: 0.95rem;
     padding: 8px 20px;
     transition: background 0.3s;
@@ -182,14 +183,14 @@ a:hover {
     width: 250px;
     background-color: #8b2626;
     padding-top: 80px;
-     transform: translateX(100%);
-  transition: transform 0.4s ease-in-out;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
     z-index: 999;
 }
 
 .slide-menu.show {
-   transform: translateX(0);
-   
+    transform: translateX(0);
+
 }
 
 /* Close Button inside Slide Menu */
@@ -220,7 +221,7 @@ a:hover {
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
-      transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
     z-index: 998;
 }
 
@@ -721,7 +722,7 @@ a:hover {
 .car-section .container {
     max-width: 1200px;
     margin: 0 auto;
-    
+
 }
 
 .car-section .header {
@@ -922,7 +923,6 @@ a:hover {
 
 
 /* ====== testimonial section start ====== */
-
 .testimonial-slider {
     width: 100%;
     max-width: 1300px;
@@ -1023,6 +1023,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
+    padding-right: 20px;
 }
 
 .testimonial-slider .rating-box {
@@ -1036,7 +1037,6 @@ a:hover {
 .testimonial-slider .quote-icon {
     font-size: 24px;
     color: var(--primary-color);
-    padding-right: 20px;
 }
 
 /* ---- Theme Pink ---- */
@@ -1149,9 +1149,11 @@ a:hover {
         font-size: 18px;
     }
 
+    /* ✅ Fix: keep footer row (rating left, quote right) */
     .testimonial-slider .card-footer {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding: 0 10px 10px 10px;
     }
 
@@ -1159,7 +1161,7 @@ a:hover {
         font-size: 11px;
         padding: 4px 12px;
         border-radius: 0 12px 0 0;
-        margin-bottom: 4px;
+        margin-bottom: 0;
     }
 
     .testimonial-slider .quote-icon {
@@ -1202,10 +1204,9 @@ a:hover {
         font-size: 16px;
     }
 
-    /* ✅ Rating left & Quote right */
+    /* ✅ Fix: footer row maintained */
     .testimonial-slider .card-footer {
-        display: flex;
-        flex-direction: row;  /* side by side */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 0 10px 10px 10px;
@@ -1215,7 +1216,6 @@ a:hover {
         font-size: 10px;
         padding: 4px 12px;
         border-radius: 0 12px 0 0;
-        margin-bottom: 0; /* column ka effect remove */
     }
 
     .testimonial-slider .quote-icon {
@@ -1301,6 +1301,7 @@ a:hover {
 .menu_links {
     margin-left: 80px;
 }
+
 .links {
     margin-left: 40px;
 }
@@ -1362,9 +1363,10 @@ a:hover {
     .menu_links {
         margin-left: 0;
     }
+
     .links {
-    margin-left: 0;
-}
+        margin-left: 0;
+    }
 }
 
 /* ====== Footer section end ====== */
@@ -1498,10 +1500,10 @@ a:hover {
         text-align: center;
     }
 
-  .about_section2 .container .right h1 {
-    font-size: 1.5rem;
-    
-}
+    .about_section2 .container .right h1 {
+        font-size: 1.5rem;
+
+    }
 
     .about_section2 .container .right p {
         font-size: 15px;
@@ -1619,6 +1621,12 @@ a:hover {
         text-align: center;
     }
 
+    .about_services .services ul {
+        text-align: left;
+        padding-left: 20px;
+        /* thoda spacing ke liye */
+    }
+
     .about_services .image-section,
     .about_services .text-section {
         width: 100%;
@@ -1628,8 +1636,9 @@ a:hover {
 /* Responsive for mobile (max-width: 425px) */
 @media (max-width: 425px) {
     .about_services .header {
-    font-style: 1.5rem;
-}
+        font-style: 1.5rem;
+    }
+
     .about_services::before {
         width: 250px;
         height: 200px;
@@ -1652,6 +1661,12 @@ a:hover {
 
     .about_services .text-section h2 {
         font-size: 18px;
+    }
+
+    .about_services .services ul {
+        text-align: left;
+        padding-left: 20px;
+        /* thoda spacing ke liye */
     }
 
     .about_services .services ul li {
@@ -1770,23 +1785,29 @@ a:hover {
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* saare info-item ko vertical center karega */
-    align-items: center;      /* horizontally center */
+    justify-content: center;
+    /* saare info-item ko vertical center karega */
+    align-items: center;
+    /* horizontally center */
     text-align: center;
 }
 
 .contact_section .info-item {
     display: flex;
-    align-items: center;   /* icon + text vertical center */
+    align-items: center;
+    /* icon + text vertical center */
     justify-content: flex-start;
     gap: 15px;
     margin-bottom: 20px;
 }
+
 .contact_section .info-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;   /* vertical center */
-    align-items: flex-start;   /* left align text */
+    justify-content: center;
+    /* vertical center */
+    align-items: flex-start;
+    /* left align text */
 }
 
 
@@ -1925,16 +1946,20 @@ a:hover {
     color: var(--primary-color);
 
 }
+
 .contact_section .form-group input:focus {
     border-color: var(--primary-color);
 }
+
 .contact_section textarea {
     resize: none;
     height: 120px;
 }
+
 .contact_section textarea:focus {
-     border-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
+
 .contact_section .submit-btn {
     display: block;
     margin: auto;
@@ -1957,18 +1982,151 @@ a:hover {
 @media (max-width: 768px) {
     .contact_section .contact-container {
         flex-direction: column;
+        align-items: center;
+        /* center align */
+        padding: 0 15px;
+        /* equal left-right spacing */
     }
 
     .contact_section .contact-container>div {
+        width: 100%;
+        /* full width */
         min-height: auto;
+    }
+
+    .contact_section .contact-info,
+    .contact_section .contact-map {
+        margin: 0 auto;
+        /* center ho jaye */
     }
 
     .contact_section .contact-map iframe {
         height: 250px;
+        width: 100%;
+        /* map bhi equal ho */
     }
 }
 
 /* ====== Contact Page end ====== */
+
+
+
+/* ====== One day tour page start ====== */
+
+.tour-section .linebefore {
+    border-right: 1px solid #d3c4c4;
+}
+
+@media (max-width: 768px) {
+    .linebefore {
+        border-right: none;
+    }
+}
+
+.tour-section {
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.tour-section h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.tour-section h5 {
+    font-weight: bold;
+    margin-top: 20px;
+    border-bottom: 4px solid var(--secondary-color);
+    color: var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.tour-section .content-right {
+    max-width: 350px;
+}
+
+.tour-section .card {
+    background-color: var(--primary-color);
+    /* Red background */
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+}
+
+.tour-section .card h5 {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tour-section .card p {
+    color: #f5f5f5;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.tour-section .card input,
+.tour-section .card textarea {
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.tour-section .card input::placeholder,
+.tour-section .card textarea::placeholder {
+    color: #888;
+}
+
+.tour-section .card button {
+    background: var(--white-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.tour-section .card button:hover {
+    background: var(--secondary-color);
+    color: var(--black-color);
+}
+
+
+.tour-section .related-tours {
+    padding: 15px;
+}
+
+.tour-section .related-tours h5 {
+    border-bottom: none;
+}
+
+.tour-section .tour-img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.tour-section .tour-item h6 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.tour-section .tour-item small {
+    color: #777;
+    font-size: 13px;
+}
+
+/* ====== One day tour page end ====== */
+
+
 
 
 
