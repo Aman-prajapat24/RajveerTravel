@@ -67,7 +67,6 @@ var swiper = new Swiper(".mySwiper", {
 
 
 /////  ====== testimonial section start ====== /////
-
 var swiper = new Swiper(".myTestimonialSwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -92,15 +91,15 @@ var swiper = new Swiper(".myTestimonialSwiper", {
         },
         425: { // Mobile
             slidesPerView: 1,
-            spaceBetween: 15,
+            spaceBetween: 0,  // ✅ border issue fix
         },
         375: { // Smaller Mobile
             slidesPerView: 1,
-            spaceBetween: 10,
+            spaceBetween: 0,  // ✅ border issue fix
         },
         320: { // Extra Small Mobile
             slidesPerView: 1,
-            spaceBetween: 8,
+            spaceBetween: 0,  // ✅ border issue fix
         }
     }
 });
